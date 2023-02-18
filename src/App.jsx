@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthLayout from './layouts/AuthLayout';
 
-// Public
+
 import Login from './pages/Login';
 import Registrar from './pages/Registrar';
 import OlvidePassword from './pages/OlvidePassword';
 import NuevoPassword from './pages/NuevoPassword';
 import ConfirmarCuenta from './pages/ConfirmarCuenta';
 
-//Private
+import Seguimientos from './pages/Seguimientos';
+
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
           <Route path="olvide-password" element={<OlvidePassword/>}/>
           <Route path="olvide-password/:23" element={<NuevoPassword/>}/>
           <Route path="confirmar/:id" element={<ConfirmarCuenta/>}/>
+        </Route>
+
+        <Route path='/seguimientos'>
+          <Route index element={<Seguimientos/>}/>
+  
         </Route>
       </Routes>
     </BrowserRouter>
