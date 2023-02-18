@@ -21,10 +21,13 @@ const Login = () => {
     }
 
     try {
-      const { data } = await axiosClient.post('usuarios', {email, password})
-      console.log(data);
+      const { data } = await axiosClient.post('/signin', {email, password});
+
     } catch (error) {
-      console.log(error.response);
+      setAlerta({
+        msg: error.response.data.msg,
+        error: true
+      })
     }
 
 
